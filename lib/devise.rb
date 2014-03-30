@@ -8,7 +8,7 @@ require 'securerandom'
 module Devise
   autoload :Delegator,   'devise/delegator'
   autoload :FailureApp,  'devise/failure_app'
-  autoload :OmniAuth,    'devise/omniauth'
+  #autoload :OmniAuth,    'devise/omniauth'
   autoload :ParamFilter, 'devise/param_filter'
   autoload :Schema,      'devise/schema'
   autoload :TestHelpers, 'devise/test_helpers'
@@ -220,8 +220,8 @@ module Devise
   @@mappings = ActiveSupport::OrderedHash.new
 
   # Omniauth configurations.
-  mattr_reader :omniauth_configs
-  @@omniauth_configs = ActiveSupport::OrderedHash.new
+  #mattr_reader :omniauth_configs
+  #@@omniauth_configs = ActiveSupport::OrderedHash.new
 
   # Define a set of modules that are called when a mapping is added.
   mattr_reader :helpers
@@ -266,9 +266,9 @@ module Devise
     router_name || :main_app
   end
 
-  def self.omniauth_providers
-    omniauth_configs.keys
-  end
+  #def self.omniauth_providers
+  #  omniauth_configs.keys
+  #end
 
   # Get the mailer class from the mailer reference object.
   def self.mailer
@@ -371,11 +371,11 @@ module Devise
   #
   #   config.omniauth :github, APP_ID, APP_SECRET
   #
-  def self.omniauth(provider, *args)
-    @@helpers << Devise::OmniAuth::UrlHelpers
-    config = Devise::OmniAuth::Config.new(provider, args)
-    @@omniauth_configs[config.strategy_name.to_sym] = config
-  end
+  #def self.omniauth(provider, *args)
+  #  @@helpers << Devise::OmniAuth::UrlHelpers
+  #  config = Devise::OmniAuth::Config.new(provider, args)
+  #  @@omniauth_configs[config.strategy_name.to_sym] = config
+  #end
 
   # Include helpers in the given scope to AC and AV.
   def self.include_helpers(scope)
