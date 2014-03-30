@@ -17,17 +17,17 @@ module Devise
       Devise.include_helpers(Devise::Controllers)
     end
 
-    initializer "devise.omniauth" do |app|
-      Devise.omniauth_configs.each do |provider, config|
-        app.middleware.use config.strategy_class, *config.args do |strategy|
-          config.strategy = strategy
-        end
-      end
+    # initializer "devise.omniauth" do |app|
+    #   Devise.omniauth_configs.each do |provider, config|
+    #     app.middleware.use config.strategy_class, *config.args do |strategy|
+    #       config.strategy = strategy
+    #     end
+    #   end
 
-      if Devise.omniauth_configs.any?
-        Devise.include_helpers(Devise::OmniAuth)
-      end
-    end
+    #   if Devise.omniauth_configs.any?
+    #     Devise.include_helpers(Devise::OmniAuth)
+    #   end
+    # end
 
     initializer "devise.mongoid_version_warning" do
       if defined?(Mongoid)
