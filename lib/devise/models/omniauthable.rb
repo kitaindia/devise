@@ -1,7 +1,7 @@
-require 'devise/omniauth'
+#require 'devise/omniauth'
 
-module Devise
-  module Models
+# module Devise
+#   module Models
     # Adds OmniAuth support to your model.
     #
     # == Options
@@ -23,5 +23,5 @@ module Devise
     #     Devise::Models.config(self, :omniauth_providers)
     #   end
     # end
-  end
-end
+#   end
+# end
