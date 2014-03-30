@@ -8,8 +8,8 @@ gem "rails", "~> 3.2.0"
 gem "rdoc"
 
 group :test do
-  gem "omniauth-facebook"
-  gem "omniauth-openid", "~> 1.0.1"
+  #gem "omniauth-facebook"
+  #gem "omniauth-openid", "~> 1.0.1"
   gem "webrat", "0.7.2", :require => false
   gem "mocha", :require => false
 
