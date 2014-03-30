@@ -12,16 +12,16 @@ module Devise
     #
     #       devise_for :database_authenticatable, :omniauthable, :omniauth_providers => [:twitter]
     #
-    module Omniauthable
-      extend ActiveSupport::Concern
+    # module Omniauthable
+    #   extend ActiveSupport::Concern
 
-      def self.required_fields(klass)
-        []
-      end
+    #   def self.required_fields(klass)
+    #     []
+    #   end
 
-      module ClassMethods
-        Devise::Models.config(self, :omniauth_providers)
-      end
-    end
+    #   module ClassMethods
+    #     Devise::Models.config(self, :omniauth_providers)
+    #   end
+    # end
   end
 end
